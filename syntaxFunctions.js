@@ -1,4 +1,4 @@
-const { SSL_OP_LEGACY_SERVER_CONNECT, SSL_OP_NO_TLSv1_1 } = require("constants")
+const { SSL_OP_LEGACY_SERVER_CONNECT, SSL_OP_NO_TLSv1_1, SSL_OP_NO_TLSv1_2 } = require("constants")
 
 const CP = tokens[index].classPart
 const T = () => {
@@ -493,6 +493,271 @@ const CLIST = () => {
                 if (CLIST()) {
                     return true
                 }
+            }
+        }
+    }return false
+}
+
+const X = () => {
+    if (
+        CP === '=' ||
+        CP === 'PM' ||
+        CP === 'MDM' ||
+        CP === ';' ||
+        CP === 'ROP' ||
+        CP === '&&' ||
+        CP === '||' ||
+        CP === ',' ||
+        CP === ']' ||
+        CP === ')' ||
+        CP === 'ID' ||
+        CP === 'int_const' ||
+        CP === 'str_const' ||
+        CP === 'float_const' ||
+        CP === 'char_const' ||
+        CP === '(' ||
+        CP === '!' ||
+        CP === 'inc_dec' ||
+        
+    ) {
+        index++
+    } else if (CP === '.') {
+        index++
+        if (CP === 'ID') {
+            index++
+            if (X()) {
+                return true
+            }
+        }
+    } else if (CP === '[' || CP === '(') {
+        if (ArrIndex_call()) {
+            return true
+        }
+    }return false
+}
+
+const dotIDX = () => {
+    if(
+        CP === '=' ||
+        CP === 'PM' ||
+        CP === 'MDM' ||
+        CP === ';' ||
+        CP === 'ROP' ||
+        CP === '&&' ||
+        CP === '||' ||
+        CP === ',' ||
+        CP === ']' ||
+        CP === ')' ||
+        CP === 'ID' ||
+        CP === 'int_const' ||
+        CP === 'str_const' ||
+        CP === 'float_const' ||
+        CP === 'char_const' ||
+        CP === '(' ||
+        CP === '!' ||
+        CP === 'inc_dec' ||
+        
+    ) {
+        index++
+        
+    } else if (CP === '.') {
+        index++
+        if (CP === 'ID') {
+            index++
+            if (X()) {
+                return true
+            }
+        }
+    } else if (CP === '[' || CP === '(') {
+        if (ArrIndex_call()) {
+            return true
+        }
+    }return false
+}
+
+const ArrIndex_call = () => {
+    if (CP === '[') {
+        index++
+        if (OE()) {
+            if (CP === ']') {
+                index++
+                if (dotIDX) {
+                    return true
+                }
+            }
+        }
+    } else if (CP === '(') {
+        index++
+        if (Args()) {
+            index++
+            if (CP === ')') {
+                index++
+                if (CP === '.') {
+                    index++
+                    if (CP === 'ID') {
+                        index++
+                        if (X()) {
+                            return true
+                        }
+                    }
+                }
+            }
+        }
+    }return false
+}
+
+const XY = () => {
+    if (CP === '(') {
+        index++
+        {
+            if (Args()) {
+                if (CP === ')')
+                {
+                    index++
+                    if (NT()) {
+                        return true
+                    }
+                }
+            }
+        }
+    } else if (CP === '[') {
+        index++
+        if (OE()) {
+            if (CP === ']') {
+                index++
+                if (NT2()) {
+                    return true
+                }
+            }
+        }
+    } else if (CP === '.') {
+        index++
+        if (CP === 'ID') {
+            index++
+            if (XY()) {
+                return true
+            }
+        }
+    } else if (
+        CP === '=' ||
+        CP === 'PM' ||
+        CP === 'MDM' ||
+        CP === 'inc_dec' ||
+        CP === 'ID' 
+
+    ) {
+        if (Asgn_inc) {
+            return true
+        }
+    }return false
+}
+
+const NT = () => {
+    if (
+        CP === ';' ||
+        CP === 'MDM' ||
+        CP === 'PM' ||
+        CP === 'ROP' ||
+        CP === ')' ||
+        CP === '&&' ||
+        CP === '||' ||
+        CP === ',' ||
+        CP === ']' 
+        
+    ) {
+        index++
+    } else if (CP === '.') {
+        index++
+        if (CP === 'ID')
+        {
+            index++
+            if (XY()) {
+                return true
+            }
+        }
+    }return false
+}
+
+const Asgn_inc = () => {
+    if (CP === '=' || CP === 'PM' || CP === 'MDM') {
+        if (Asgn_op()) {
+            if (OE()) {
+                return true
+            }
+        }
+    } else if (CP === 'inc_dec' || CP === 'ID') {
+        index++
+        return true
+    }return false
+}
+
+const X_Y = () => {
+    if (CP === '(') {
+        index++
+        if (Args()) {
+            if (N_T()) {
+                return true
+            }
+        }
+    } else if (CP === '[') {
+        index++
+        if (OE()) {
+            if (CP === ']')
+            {
+                index++
+                if (N_T2()) {
+                    return true
+                }
+            }
+        }
+    } else if (CP === '.') {
+        index++
+        if (CP === 'ID') {
+            index++
+            if (X_Y()) {
+                return true
+            }
+        }
+    }return false
+}
+
+const N_T = () => {
+    if (
+        CP === ';' ||
+        CP === 'MDM' ||
+        CP === 'PM' ||
+        CP === 'ROP' ||
+        CP === ')' ||
+        CP === '&&' ||
+        CP === '||' ||
+        CP === ',' ||
+        CP === ']'
+
+    ) {
+        index++
+        return true
+    } else if (CP === '.') {
+        index++
+        if (CP === 'ID') {
+            index++
+            if (X_Y()) {
+                return true
+            }
+        }
+    }return false
+}
+
+const N_T2 = () => {
+    if (CP === 'inc_dec' || CP === 'ID') {
+        if (inc_dec()) {
+            return true
+        }
+    } else if (CP === '.') {
+        index++
+        if (CP === 'ID') {
+            index++
+            if (X_Y()) {
+                return true
             }
         }
     }return false
