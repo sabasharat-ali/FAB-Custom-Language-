@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "lMZzDznsSvTGSPFEG1QqE8W6ytAXVLB5u/9JrBC2JMxXfg4N0xbiUq+GaVP3Hyj3svpqeWzaCZ1H5pk5lruQVw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\sabas\\source\\repos\\FAB_Language\\FAB_Language\\FAB_Language.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sabas\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\sabas\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.10\\microsoft.netcore.app.host.win-x64.3.1.10.nupkg.sha512"
+  ],
+  "logs": []
+}

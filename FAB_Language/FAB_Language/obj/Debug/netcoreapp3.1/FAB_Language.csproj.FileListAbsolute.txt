@@ -1,0 +1,13 @@
+C:\Users\sabas\source\repos\FAB_Language\FAB_Language\obj\Debug\netcoreapp3.1\FAB_Language.csprojAssemblyReference.cache
+C:\Users\sabas\source\repos\FAB_Language\FAB_Language\obj\Debug\netcoreapp3.1\FAB_Language.AssemblyInfoInputs.cache
+C:\Users\sabas\source\repos\FAB_Language\FAB_Language\obj\Debug\netcoreapp3.1\FAB_Language.AssemblyInfo.cs
+C:\Users\sabas\source\repos\FAB_Language\FAB_Language\obj\Debug\netcoreapp3.1\FAB_Language.csproj.CoreCompileInputs.cache
+C:\Users\sabas\source\repos\FAB_Language\FAB_Language\bin\Debug\netcoreapp3.1\FAB_Language.exe
+C:\Users\sabas\source\repos\FAB_Language\FAB_Language\bin\Debug\netcoreapp3.1\FAB_Language.deps.json
+C:\Users\sabas\source\repos\FAB_Language\FAB_Language\bin\Debug\netcoreapp3.1\FAB_Language.runtimeconfig.json
+C:\Users\sabas\source\repos\FAB_Language\FAB_Language\bin\Debug\netcoreapp3.1\FAB_Language.runtimeconfig.dev.json
+C:\Users\sabas\source\repos\FAB_Language\FAB_Language\bin\Debug\netcoreapp3.1\FAB_Language.dll
+C:\Users\sabas\source\repos\FAB_Language\FAB_Language\bin\Debug\netcoreapp3.1\FAB_Language.pdb
+C:\Users\sabas\source\repos\FAB_Language\FAB_Language\obj\Debug\netcoreapp3.1\FAB_Language.dll
+C:\Users\sabas\source\repos\FAB_Language\FAB_Language\obj\Debug\netcoreapp3.1\FAB_Language.pdb
+C:\Users\sabas\source\repos\FAB_Language\FAB_Language\obj\Debug\netcoreapp3.1\FAB_Language.genruntimeconfig.cache
